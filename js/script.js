@@ -49,3 +49,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle (to be implemented)
     // You can expand this to add mobile menu functionality
 });
+
+// Add this to your existing script.js file
+
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+    
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.querySelector('.theme-icon');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme preference or use system preference
+    const currentTheme = localStorage.getItem('theme') || 
+                        (prefersDarkScheme.matches ? 'dark' : 'light');
+    
+    // Apply the current theme
+    if (currentTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+    } else {
+        document.body.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        let theme;
+        if (document.body.hasAttribute('data-theme')) {
+            document.body.removeAttribute('data-theme');
+            themeIcon.textContent = '🌙';
+            theme = 'light';
+        } else {
+            document.body.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+            theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
+    });
+    
+    // Listen for system theme changes
+    prefersDarkScheme.addEventListener('change', e => {
+        const newTheme = e.matches ? 'dark' : 'light';
+        if (!localStorage.getItem('theme')) { // Only if no manual preference set
+            if (newTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+            } else {
+                document.body.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+            }
+        }
+    });
+});

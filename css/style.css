@@ -275,4 +275,78 @@ footer {
     .hero h2 {
         font-size: 1.2rem;
     }
+
+}
+
+/* Add these to your existing CSS file */
+
+/* Dark Mode Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --background: #ffffff;
+    --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2d2d2d;
+    --accent-color: #5dade2;
+    --light-color: #2d2d2d;
+    --dark-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --text-light: #b3b3b3;
+    --background: #121212;
+    --card-bg: #1a1a1a;
+}
+
+/* Update body background */
+body {
+    background-color: var(--background);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Update elements that need specific dark mode colors */
+.skills,
+.blog-posts,
+.notes-content,
+.project-card {
+    background-color: var(--card-bg);
+}
+
+/* Update footer in dark mode */
+[data-theme="dark"] footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Update hero text color in dark mode */
+[data-theme="dark"] .hero {
+    color: var(--text-color);
+}
+
+/* Update tag colors in dark mode */
+[data-theme="dark"] .tag {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
