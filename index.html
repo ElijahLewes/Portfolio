@@ -1,52 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tech Historian Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Tech<span>Historian</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#notes">Tech Notes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML document to demonstrate the structure of a web page.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Information Systems & Technology Management</h1>
+                <h2>With a Passion for Technology History</h2>
+                <a href="#about" class="btn">Explore My Work</a>
+            </div>
+        </div>
+    </section>
 
-    <h2>List of Items</h2>
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a recent graduate in Information Systems and Technology Management with a deep fascination for the historical development of technology and its impact on society.</p>
+                    <p>My academic background combines technical knowledge with management principles, giving me a unique perspective on how technology evolves within organizational contexts.</p>
+                    <p>When I'm not coding or researching modern systems, I'm often exploring the origins of computing, the evolution of programming languages, or the social history of technological innovation.</p>
+                </div>
+                <div class="skills">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Systems Analysis & Design</li>
+                        <li>Database Management</li>
+                        <li>Web Development</li>
+                        <li>IT Project Management</li>
+                        <li>Technology History Research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>Table Example</h2>
-    <table border="1">
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-        </tr>
-        <tr>
-            <td>Alice</td>
-            <td>30</td>
-            <td>New York</td>
-        </tr>
-        <tr>
-            <td>Bob</td>
-            <td>25</td>
-            <td>Los Angeles</td>
-        </tr>
-        <tr>
-            <td>Charlie</td>
-            <td>35</td>
-            <td>Chicago</td>
-        </tr>
-    </table>
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project cards will be added dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
 
-    <h2>Image Example</h2>
-    <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    <!-- Blog Section Framework -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2 class="section-title">Tech History Blog</h2>
+            <div class="blog-posts">
+                <!-- Blog posts will be added dynamically -->
+                <div class="blog-placeholder">
+                    <p>Blog section coming soon. This will feature articles on technology history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>Link Example</h2>
-    <p><a href="https://www.example.com">Visit Example.com</a></p>
-    
+    <!-- Tech Notes Section Framework -->
+    <section id="notes" class="section notes">
+        <div class="container">
+            <h2 class="section-title">Tech Notes</h2>
+            <div class="notes-content">
+                <p>This section will link to my Obsidian vault and display selected markdown-formatted notes on various technical and historical topics.</p>
+                <div class="notes-placeholder">
+                    <p>Notes integration coming soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Tech Historian Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
