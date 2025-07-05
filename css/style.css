@@ -4,23 +4,45 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Lite Mode (Default) - Tan/Orange Theme */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #3498db;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #7f8c8d;
+    /* Colors */
+    --primary-bg: #f5e7d6; /* Light tan */
+    --secondary-bg: #e8d5b5; /* Medium tan */
+    --accent-color: #e67e22; /* Pumpkin orange */
+    --accent-dark: #d35400; /* Darker orange */
+    --text-color: #3a3a3a; /* Dark gray */
+    --text-light: #666666; /* Medium gray */
+    --card-bg: #ffffff; /* White cards */
+    --header-bg: #e67e22; /* Orange header */
+    --footer-bg: #e67e22; /* Orange footer */
+    --tag-bg: #f0e0c8; /* Light tan tags */
+    --border-color: #d4b483; /* Tan border */
+}
+
+/* Dark Mode - Black/Orange Theme */
+[data-theme="dark"] {
+    --primary-bg: #121212; /* Near black */
+    --secondary-bg: #1a1a1a; /* Slightly lighter black */
+    --accent-color: #e67e22; /* Same orange */
+    --accent-dark: #f39c12; /* Brighter orange */
+    --text-color: #f0f0f0; /* Off-white */
+    --text-light: #b3b3b3; /* Light gray */
+    --card-bg: #1e1e1e; /* Dark gray cards */
+    --header-bg: #1a1a1a; /* Dark header */
+    --footer-bg: #1a1a1a; /* Dark footer */
+    --tag-bg: #2a2a2a; /* Dark gray tags */
+    --border-color: #333333; /* Dark border */
 }
 
 body {
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--light-color);
-    padding-top: 70px; /* To account for fixed header */
+    background-color: var(--primary-bg);
+    padding-top: 70px;
 }
 
 a {
@@ -37,7 +59,7 @@ a {
 
 /* Header */
 header {
-    background-color: var(--primary-color);
+    background-color: var(--header-bg);
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -60,12 +82,13 @@ nav {
 }
 
 .logo span {
-    color: var(--accent-color);
+    color: var(--accent-dark);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .nav-links li {
@@ -78,7 +101,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--accent-dark);
 }
 
 /* Hero Section */
@@ -86,7 +109,7 @@ nav {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     color: white;
@@ -118,19 +141,20 @@ nav {
 }
 
 .btn:hover {
-    background-color: #2980b9;
+    background-color: var(--accent-dark);
 }
 
 /* Sections */
 .section {
     padding: 5rem 0;
+    background-color: var(--primary-bg);
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* About Section */
@@ -149,15 +173,16 @@ nav {
 
 .skills {
     flex: 1;
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
 }
 
 .skills h3 {
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .skills ul {
@@ -176,11 +201,12 @@ nav {
 }
 
 .project-card {
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
@@ -189,7 +215,7 @@ nav {
 
 .project-image {
     height: 200px;
-    background-color: #ddd;
+    background-color: var(--secondary-bg);
     background-size: cover;
     background-position: center;
 }
@@ -200,7 +226,7 @@ nav {
 
 .project-info h3 {
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .project-info p {
@@ -216,18 +242,20 @@ nav {
 }
 
 .tag {
-    background-color: var(--light-color);
+    background-color: var(--tag-bg);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
+    color: var(--text-color);
 }
 
 /* Blog Section */
 .blog-posts {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
 }
 
 .blog-placeholder {
@@ -238,10 +266,11 @@ nav {
 
 /* Notes Section */
 .notes-content {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
 }
 
 .notes-placeholder {
@@ -252,10 +281,34 @@ nav {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--footer-bg);
     color: white;
     text-align: center;
     padding: 2rem 0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: transform 0.3s;
+    background-color: var(--accent-dark);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
 }
 
 /* Responsive Design */
@@ -275,78 +328,4 @@ footer {
     .hero h2 {
         font-size: 1.2rem;
     }
-
-}
-
-/* Add these to your existing CSS file */
-
-/* Dark Mode Variables */
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #3498db;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #7f8c8d;
-    --background: #ffffff;
-    --card-bg: #ffffff;
-}
-
-[data-theme="dark"] {
-    --primary-color: #1a1a1a;
-    --secondary-color: #2d2d2d;
-    --accent-color: #5dade2;
-    --light-color: #2d2d2d;
-    --dark-color: #1a1a1a;
-    --text-color: #f5f5f5;
-    --text-light: #b3b3b3;
-    --background: #121212;
-    --card-bg: #1a1a1a;
-}
-
-/* Update body background */
-body {
-    background-color: var(--background);
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    transition: transform 0.3s;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-
-/* Update elements that need specific dark mode colors */
-.skills,
-.blog-posts,
-.notes-content,
-.project-card {
-    background-color: var(--card-bg);
-}
-
-/* Update footer in dark mode */
-[data-theme="dark"] footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-}
-
-/* Update hero text color in dark mode */
-[data-theme="dark"] .hero {
-    color: var(--text-color);
-}
-
-/* Update tag colors in dark mode */
-[data-theme="dark"] .tag {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
 }
