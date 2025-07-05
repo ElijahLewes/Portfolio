@@ -7,8 +7,8 @@ const projects = [
         image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
-        title: "Database Systems Evolution",
-        description: "Research project mapping the development of database management systems.",
+        title: "Tangent App",
+        description: "AI powered desktop application for managing personal knowledge, tasks, and notes.",
         tags: ["Research", "SQL", "NoSQL"],
         image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
